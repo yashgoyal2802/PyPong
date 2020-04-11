@@ -31,8 +31,8 @@ ball.shape("circle")
 ball.color("Blue")
 ball.penup()
 ball.goto(0, 0)
-ball.dx = 1
-ball.dy = 1
+ball.dx = 0.2
+ball.dy = 0.2
 
 
 # Movements
@@ -87,4 +87,12 @@ while True:
         ball.dx *= -1
     if ball.xcor() < -390:
         ball.goto(0, 0)
+        ball.dx *= -1
+
+    # Paddle and Ball Collision
+    if (340 < ball.xcor() < 350) and (paddle_b.ycor() + 40 > ball.ycor() > paddle_b.ycor() - 40):
+        ball.setx(340)
+        ball.dx *= -1
+    if (-350 < ball.xcor() < -340) and (paddle_a.ycor() + 40 > ball.ycor() > paddle_a.ycor() - 40):
+        ball.setx(-340)
         ball.dx *= -1
