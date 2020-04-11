@@ -24,6 +24,14 @@ paddle_b.shapesize(stretch_len=1, stretch_wid=6)
 paddle_b.penup()
 paddle_b.goto(350, 0)
 
+# Ball
+ball = turtle.Turtle()
+ball.speed(0)
+ball.shape("circle")
+ball.color("Blue")
+ball.penup()
+ball.goto(0, 0)
+
 # Main game loop
 while True:
     t.update()
